@@ -4,7 +4,7 @@ class PaletteSingleColor extends Component {
   render() {
     const { color } = this.props;
     const style = {
-      backgroundColor: "#" + color
+      backgroundColor: color
     };
     return (
       <div className="palette-single-color" style={style}>

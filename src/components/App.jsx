@@ -8,7 +8,7 @@ class App extends Component {
   getPalette() {
     const { startColor, endColor, numSteps } = this.props;
 
-    return GradientPalette.calculateSteps(startColor, endColor, numSteps);
+    return GradientPalette.generate(startColor, endColor, numSteps);
   }
 
   render() {
