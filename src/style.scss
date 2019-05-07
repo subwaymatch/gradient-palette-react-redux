@@ -15,9 +15,60 @@ body,
 }
 
 #palette-control-bar {
+  color: #ccc;
   display: flex;
-  padding: 10px 60px;
+  padding: 40px 60px;
   align-items: center;
+}
+
+#palette-color-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.color-circle {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 20px;
+  margin-right: 12px;
+}
+
+.color-display-wrapper {
+  position: relative;
+  margin-right: 40px;
+
+  .color-display {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .hex-text {
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    &:hover {
+      .hex-text {
+        color: #aaa;
+      }
+    }
+  }
+
+  .color-picker-wrapper {
+    position: absolute;
+    z-index: 2;
+    margin-top: 4px;
+  }
+
+  .close-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 #main-palette-display-wrapper {

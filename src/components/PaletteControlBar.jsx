@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PaletteColorsForm from "./PaletteColorsForm";
+import PaletteColorInputs from "./PaletteColorInputs";
 import PaletteButtons from "./PaletteButtons";
 import PaletteMenu from "./PaletteMenu";
 
@@ -7,7 +7,7 @@ class PaletteControlBar extends Component {
   render() {
     return (
       <div id="palette-control-bar">
-        <PaletteColorsForm />
+        <PaletteColorInputs />
         <PaletteButtons />
         <PaletteMenu />
       </div>
