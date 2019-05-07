@@ -4379,7 +4379,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
 
-gradient-palette@^1.0.0:
+gradient-palette@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/gradient-palette/-/gradient-palette-1.1.0.tgz#1964612b52498ba974e61ed7098db032f8010218"
   integrity sha512-JWm/l874YAQ/1DkFbjAXaRRL9AmBWTw4htVe9fQXD4qWdDXZ0ls1O6sUzNjFMLPsoUsA+WzvE7Ox9UgbXScoaQ==

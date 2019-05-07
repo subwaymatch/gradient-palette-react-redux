@@ -22,7 +22,7 @@ function palette(state = initialState, action) {
         endColor: action.payload.color
       });
     case PALETTE_SET_COLORS:
-      return Object.assign({}, state, ...action.payload);
+      return Object.assign({}, state, action.payload);
     case PALETTE_SET_NUM_STEPS:
       return Object.assign({}, state, {
         numSteps: action.payload.numSteps

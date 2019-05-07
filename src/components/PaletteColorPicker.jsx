@@ -6,19 +6,12 @@ class PaletteColorPicker extends Component {
     super(props);
 
     this.state = {
-      displayColorPicker: false,
-      color: ""
+      displayColorPicker: false
     };
 
     this.handleColorDisplayClick = this.handleColorDisplayClick.bind(this);
     this.handleColorPickerClose = this.handleColorPickerClose.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      color: this.props.color
-    });
   }
 
   handleColorDisplayClick() {
@@ -34,10 +27,6 @@ class PaletteColorPicker extends Component {
   }
 
   handleColorChange(color) {
-    this.setState({
-      color: color.hex
-    });
-
     this.props.onColorUpdate(color.hex);
   }
 
@@ -48,10 +37,10 @@ class PaletteColorPicker extends Component {
           <span
             className="color-circle"
             style={{
-              backgroundColor: this.state.color
+              backgroundColor: this.props.color
             }}
           />
-          <span className="hex-text">{this.state.color.substring(1)}</span>
+          <span className="hex-text">{this.props.color.substring(1)}</span>
         </div>
 
         {this.state.displayColorPicker && (

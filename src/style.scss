@@ -17,7 +17,7 @@ body,
 #palette-control-bar {
   color: #d9d9d9;
   display: flex;
-  padding: 30px 60px;
+  padding: 24px 80px;
   align-items: center;
 }
 
@@ -44,14 +44,13 @@ body,
     cursor: pointer;
 
     .hex-text {
-      font-size: 36px;
+      font-size: 30px;
       font-weight: 300;
-      letter-spacing: 1px;
     }
 
     &:hover {
       .hex-text {
-        color: #bbb;
+        color: #777;
       }
     }
   }
@@ -73,29 +72,33 @@ body,
 
 #palette-buttons-wrapper {
   display: flex;
-}
 
-#palette-buttons-wrapper button {
-  cursor: pointer;
-  border: none;
-  font-size: 20px;
-  color: #d9d9d9;
-  display: inline-block;
-  background: transparent;
-  padding: 10px 20px;
-  margin-right: 20px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-
-  i.icon {
-    font-size: 24px;
+  button {
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: #ccc;
     display: inline-block;
-    margin-right: 15px;
-  }
+    background: transparent;
+    padding: 14px 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
 
-  &:hover {
-    color: #bbb;
+    i.icon {
+      font-size: 24px;
+      display: inline-block;
+      margin-right: 15px;
+
+      &.ion-ios-link {
+        font-size: 22px;
+      }
+    }
+
+    &:hover {
+      color: #777;
+    }
   }
 }
 
