@@ -1,5 +1,15 @@
+@import url('https://rsms.me/inter/inter.css');
+
 html {
-  font: normal 18px/1.6 "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
 }
 
 html,
@@ -76,7 +86,7 @@ body,
   button {
     cursor: pointer;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     color: #ccc;
     display: inline-block;
     background: transparent;
