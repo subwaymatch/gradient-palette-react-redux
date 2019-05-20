@@ -19,6 +19,7 @@ class PaletteColorInputs extends Component {
     this.onEndColorUpdate = this.onEndColorUpdate.bind(this);
     this.onNumStepsChange = this.onNumStepsChange.bind(this);
   }
+
   onStartColorUpdate(hex) {
     this.props.dispatchPaletteSetStartColor(hex);
   }

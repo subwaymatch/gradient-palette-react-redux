@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import PaletteSingleColor from "./PaletteSingleColor";
 
+const _ = require("lodash");
+
 class PaletteDisplay extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    // return _.isEqual(this.props.palette, nextProps.palette);
+    return true;
+  }
+
   render() {
     const { palette } = this.props;
-
-    console.log("PaletteDisplay");
-    console.log(palette);
 
     return (
       <div className="palette-display">

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import { paletteRandomize } from "../actions";
 
 class PaletteButtons extends Component {
@@ -26,12 +25,7 @@ class PaletteButtons extends Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-  dispatchPaletteRandomize: () => {
-    console.log("paletteRandomize action");
-    console.log(paletteRandomize());
-
-    dispatch(paletteRandomize());
-  }
+  dispatchPaletteRandomize: () => dispatch(paletteRandomize())
 });
 
 export default connect(
