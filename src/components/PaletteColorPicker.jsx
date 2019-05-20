@@ -52,7 +52,7 @@ class PaletteColorPicker extends Component {
             <SketchPicker
               disableAlpha={true}
               presetColors={[]}
-              color={this.state.color}
+              color={this.props.color}
               onChangeComplete={this.handleColorChange}
             />
           </div>

@@ -15,6 +15,7 @@ class App extends Component {
 
   handleHistoryChange(location, action) {
     // location is an object like window.loaction
+    console.log("history action=" + action);
 
     if (action === "POP") {
       const qValues = queryString.parse(location.search);
@@ -22,8 +23,8 @@ class App extends Component {
       if (
         qValues.start !== undefined &&
         qValues.end !== undefined &&
-        qValues.start !== this.props.startColor.substring(1) &&
-        qValues.end !== this.props.endColor.substring(1)
+        (qValues.start !== this.props.startColor.substring(1) ||
+          qValues.end !== this.props.endColor.substring(1))
       ) {
         this.didPop = true;
         this.props.dispatchSetColors("#" + qValues.start, "#" + qValues.end);

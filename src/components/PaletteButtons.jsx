@@ -25,7 +25,10 @@ class PaletteButtons extends Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-  dispatchPaletteRandomize: () => dispatch(paletteRandomize())
+  dispatchPaletteRandomize: () => {
+    console.log("***PALETTE RANDOMIZE***");
+    dispatch(paletteRandomize());
+  }
 });
 
 export default connect(
