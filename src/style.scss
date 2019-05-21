@@ -1,22 +1,14 @@
-@import url('https://rsms.me/inter/inter.css');
-
-html {
-  font-size: 18px;
-  line-height: 1.6;
-  font-family: 'Inter', sans-serif;
-}
-
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: 'Inter var', sans-serif;
-  }
-}
+@import url("https://rsms.me/inter/inter.css");
 
 html,
 body,
 #root,
 #app {
   height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 #app {
@@ -58,7 +50,8 @@ body,
       font-weight: 300;
     }
 
-    &:hover {
+    &:hover,
+    &.active {
       .hex-text {
         color: #777;
       }

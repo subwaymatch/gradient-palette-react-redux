@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { SketchPicker } from "react-color";
+const classnames = require("classnames");
 
 class PaletteColorPicker extends Component {
   constructor(props) {
@@ -31,9 +32,17 @@ class PaletteColorPicker extends Component {
   }
 
   render() {
+    const colorDisplayClassStr = classnames({
+      "color-display": true,
+      active: this.state.displayColorPicker
+    });
+
     return (
       <div className="color-display-wrapper">
-        <div className="color-display" onClick={this.handleColorDisplayClick}>
+        <div
+          className={colorDisplayClassStr}
+          onClick={this.handleColorDisplayClick}
+        >
           <span
             className="color-circle"
             style={{
