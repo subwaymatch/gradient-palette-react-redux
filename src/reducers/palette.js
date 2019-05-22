@@ -2,7 +2,8 @@ import {
   PALETTE_SET_START_COLOR,
   PALETTE_SET_END_COLOR,
   PALETTE_SET_COLORS,
-  PALETTE_SET_NUM_STEPS
+  PALETTE_SET_NUM_STEPS,
+  PALETTE_REVERSE
 } from "../actions";
 
 const initialState = {
@@ -23,6 +24,11 @@ function palette(state = initialState, action) {
       });
     case PALETTE_SET_COLORS:
       return Object.assign({}, state, action.payload);
+    case PALETTE_REVERSE:
+      return Object.assign({}, state, {
+        startColor: state.endColor,
+        endColor: state.startColor
+      });
     case PALETTE_SET_NUM_STEPS:
       return Object.assign({}, state, {
         numSteps: action.payload.numSteps

@@ -36,6 +36,12 @@ export const paletteRandomize = () => ({
   }
 });
 
+export const PALETTE_REVERSE = "PALETTE_REVERSE";
+
+export const paletteReverse = item => ({
+  type: PALETTE_REVERSE
+});
+
 export const PALETTE_SET_NUM_STEPS = "PALETTE_SET_NUM_STEPS";
 
 export const paletteSetNumSteps = numSteps => ({

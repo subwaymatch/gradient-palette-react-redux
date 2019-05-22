@@ -29,7 +29,7 @@ class PaletteDisplay extends Component {
     return (
       <div className="palette-display">
         {palette.map((color, idx) => {
-          return <PaletteSingleColor key={idx} color={color} />;
+          return <PaletteSingleColor key={idx} idx={idx} color={color} />;
         })}
       </div>
     );

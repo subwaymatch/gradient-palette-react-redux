@@ -1,23 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { paletteRandomize } from "../actions";
+import { paletteRandomize, paletteReverse } from "../actions";
 import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
 
 class PaletteButtons extends Component {
   render() {
-    const { dispatchPaletteRandomize } = this.props;
+    const { dispatchPaletteRandomize, dispatchPaletteReverse } = this.props;
 
     return (
       <div id="palette-buttons-wrapper">
         <Tooltip
           animation="shift"
-          duration={200}
+          duration={100}
           animateFill={false}
           hideOnClick={false}
-          title="Randomize Palette"
+          title="Randomize"
           position="bottom"
-          distance={-10}
+          distance={-2}
+          theme="light"
         >
           <div className="button" onClick={dispatchPaletteRandomize}>
             <i className="icon ion-ios-shuffle" />
@@ -26,12 +27,28 @@ class PaletteButtons extends Component {
 
         <Tooltip
           animation="shift"
-          duration={200}
+          duration={100}
           animateFill={false}
           hideOnClick={false}
-          title="Copy Link to Clipboard"
+          title="Reverse"
           position="bottom"
-          distance={-10}
+          distance={-2}
+          theme="light"
+        >
+          <div className="button" onClick={dispatchPaletteReverse}>
+            <i className="icon ion-ios-swap" />
+          </div>
+        </Tooltip>
+
+        <Tooltip
+          animation="shift"
+          duration={100}
+          animateFill={false}
+          hideOnClick={false}
+          title="Copy link to clipboard"
+          position="bottom"
+          distance={-2}
+          theme="light"
         >
           <div className="button">
             <i className="icon ion-ios-link" />
@@ -42,13 +59,14 @@ class PaletteButtons extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  startColor: state.palette.startColor,
+  endColor: state.palette.endColor
+});
 
 const mapDispatchToProps = dispatch => ({
-  dispatchPaletteRandomize: () => {
-    console.log("***PALETTE RANDOMIZE***");
-    dispatch(paletteRandomize());
-  }
+  dispatchPaletteRandomize: () => dispatch(paletteRandomize()),
+  dispatchPaletteReverse: () => dispatch(paletteReverse())
 });
 
 export default connect(
