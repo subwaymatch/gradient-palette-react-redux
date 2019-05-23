@@ -6,13 +6,13 @@ import {
   PALETTE_REVERSE
 } from "../actions";
 
-const initialState = {
+export const initialPaletteState = {
   startColor: "#d7de63",
   endColor: "#226c45",
   numSteps: 10
 };
 
-function palette(state = initialState, action) {
+function palette(state = initialPaletteState, action) {
   switch (action.type) {
     case PALETTE_SET_START_COLOR:
       return Object.assign({}, state, {

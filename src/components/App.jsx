@@ -5,12 +5,30 @@ import PaletteControlBar from "./PaletteControlBar";
 import PaletteDisplay from "./PaletteDisplay";
 import GradientPalette from "gradient-palette";
 import { paletteSetColors, paletteSetNumSteps } from "../actions";
+import { initialPaletteState } from "../reducers/palette";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.handleHistoryChange = this.handleHistoryChange.bind(this);
     this.didPop = false;
+
+    // Assign default colors if no query parameters were given
+    const { location, history } = this.props;
+    const qValues = queryString.parse(location.search);
+
+    if (qValues.start === undefined || qValues.end === undefined) {
+      const steps =
+        qValues.steps === undefined ? 10 : initialPaletteState.numSteps;
+      history.replace(
+        "?start=" +
+          initialPaletteState.startColor.substring(1) +
+          "&end=" +
+          initialPaletteState.endColor.substring(1) +
+          "&steps=" +
+          steps
+      );
+    }
   }
 
   handleHistoryChange(location, action) {

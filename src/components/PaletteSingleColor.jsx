@@ -18,8 +18,6 @@ class PaletteSingleColor extends Component {
     this.contextMenuId = "context_menu_" + props.idx;
     this.handleContextMenu = this.handleContextMenu.bind(this);
     this.copyColorToClipboard = this.copyColorToClipboard.bind(this);
-
-    console.log("this.contextMenuId=" + this.contextMenuId);
   }
 
   SingleColorContextMenu = () => {
@@ -66,8 +64,6 @@ class PaletteSingleColor extends Component {
 
   copyColorToClipboard(includeSharp = true) {
     copy(this.props.color);
-
-    console.log("Successfully copied");
 
     this.setState({
       isCopied: true
