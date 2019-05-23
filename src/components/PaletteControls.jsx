@@ -4,7 +4,7 @@ import { paletteRandomize, paletteReverse } from "../actions";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 
-class PaletteButtons extends Component {
+class PaletteControls extends Component {
   render() {
     const { dispatchPaletteRandomize, dispatchPaletteReverse } = this.props;
 
@@ -72,4 +72,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PaletteButtons);
+)(PaletteControls);

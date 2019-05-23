@@ -9,7 +9,7 @@ import {
 const initialState = {
   startColor: "#d7de63",
   endColor: "#226c45",
-  numSteps: 8
+  numSteps: 10
 };
 
 function palette(state = initialState, action) {

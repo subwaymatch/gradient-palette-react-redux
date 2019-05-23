@@ -91,7 +91,7 @@ class PaletteSingleColor extends Component {
       : "ion-md-copy";
     const clipboardTooltipText = this.state.isCopied
       ? "Copied!"
-      : "Copy " + color + " to clipboard";
+      : "Copy to clipboard";
 
     return (
       <div
