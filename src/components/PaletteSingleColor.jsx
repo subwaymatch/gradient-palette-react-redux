@@ -2,14 +2,22 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Menu, Item, Separator, contextMenu } from "react-contexify";
 import "react-contexify/dist/ReactContexify.min.css";
+import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
+import copy from "copy-to-clipboard";
 import { paletteSetStartColor, paletteSetEndColor } from "../actions";
 
 class PaletteSingleColor extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      isCopied: false
+    };
+
     this.contextMenuId = "context_menu_" + props.idx;
     this.handleContextMenu = this.handleContextMenu.bind(this);
+    this.copyColorToClipboard = this.copyColorToClipboard.bind(this);
 
     console.log("this.contextMenuId=" + this.contextMenuId);
   }
@@ -56,20 +64,66 @@ class PaletteSingleColor extends Component {
     });
   }
 
+  copyColorToClipboard(includeSharp = true) {
+    copy(this.props.color);
+
+    console.log("Successfully copied");
+
+    this.setState({
+      isCopied: true
+    });
+
+    setTimeout(() => {
+      this.setState({
+        isCopied: false
+      });
+    }, 1000);
+  }
+
   render() {
     const { color } = this.props;
     const style = {
       backgroundColor: color
     };
+
+    const clipboardIconClassname = this.state.isCopied
+      ? "ion-md-checkmark"
+      : "ion-md-copy";
+    const clipboardTooltipText = this.state.isCopied
+      ? "Copied!"
+      : "Copy " + color + " to clipboard";
+
     return (
       <div
-        className="palette-single-color"
+        className="palette-single-color-wrapper"
         onContextMenu={this.handleContextMenu}
-        style={style}
       >
-        {color}
+        <div className="palette-single-color" style={style}>
+          <div className="show-on-hover">
+            <div className="color-text">{color}</div>
 
-        <this.SingleColorContextMenu />
+            <Tooltip
+              animation="shift"
+              duration={100}
+              animateFill={false}
+              hideOnClick={false}
+              title={clipboardTooltipText}
+              position="bottom"
+              distance={10}
+              size="small"
+              theme="light"
+            >
+              <div
+                className="clipboard-button"
+                onClick={this.copyColorToClipboard}
+              >
+                <i className={"icon " + clipboardIconClassname} />
+              </div>
+            </Tooltip>
+          </div>
+
+          <this.SingleColorContextMenu />
+        </div>
       </div>
     );
   }

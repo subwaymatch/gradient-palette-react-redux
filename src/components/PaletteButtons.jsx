@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { paletteRandomize, paletteReverse } from "../actions";
-import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
 
 class PaletteButtons extends Component {
   render() {
@@ -15,13 +15,13 @@ class PaletteButtons extends Component {
           duration={100}
           animateFill={false}
           hideOnClick={false}
-          title="Randomize"
+          title="Reverse"
           position="bottom"
           distance={-2}
           theme="light"
         >
-          <div className="button" onClick={dispatchPaletteRandomize}>
-            <i className="icon ion-ios-shuffle" />
+          <div className="button" onClick={dispatchPaletteReverse}>
+            <i className="icon ion-ios-swap" />
           </div>
         </Tooltip>
 
@@ -30,13 +30,13 @@ class PaletteButtons extends Component {
           duration={100}
           animateFill={false}
           hideOnClick={false}
-          title="Reverse"
+          title="Randomize"
           position="bottom"
           distance={-2}
           theme="light"
         >
-          <div className="button" onClick={dispatchPaletteReverse}>
-            <i className="icon ion-ios-swap" />
+          <div className="button" onClick={dispatchPaletteRandomize}>
+            <i className="icon ion-ios-shuffle" />
           </div>
         </Tooltip>
 

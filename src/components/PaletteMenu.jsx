@@ -4,7 +4,7 @@ class PaletteMenu extends Component {
   render() {
     return (
       <div id="palettemenu-wrapper">
-        <div style={{ display: "none" }}>PaletteMenu Component</div>
+        <div style={{ display: "block" }}>PaletteMenu Component</div>
       </div>
     );
   }
