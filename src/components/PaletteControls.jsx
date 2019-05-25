@@ -9,7 +9,7 @@ class PaletteControls extends Component {
     const { dispatchPaletteRandomize, dispatchPaletteReverse } = this.props;
 
     return (
-      <div id="palette-buttons-wrapper">
+      <div id="palette-controls-wrapper">
         <Tooltip
           animation="shift"
           duration={100}
@@ -37,21 +37,6 @@ class PaletteControls extends Component {
         >
           <div className="button" onClick={dispatchPaletteRandomize}>
             <i className="icon ion-ios-shuffle" />
-          </div>
-        </Tooltip>
-
-        <Tooltip
-          animation="shift"
-          duration={100}
-          animateFill={false}
-          hideOnClick={false}
-          title="Copy link to clipboard"
-          position="bottom"
-          distance={-2}
-          theme="light"
-        >
-          <div className="button">
-            <i className="icon ion-ios-link" />
           </div>
         </Tooltip>
       </div>

@@ -19,7 +19,9 @@ class App extends Component {
 
     if (qValues.start === undefined || qValues.end === undefined) {
       const steps =
-        qValues.steps === undefined ? 10 : initialPaletteState.numSteps;
+        qValues.steps === undefined
+          ? initialPaletteState.numSteps
+          : Number.parseInt(qValues.steps);
       history.replace(
         "?start=" +
           initialPaletteState.startColor.substring(1) +
