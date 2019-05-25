@@ -74,47 +74,73 @@ body {
   }
 }
 
+.control-button {
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  color: #ccc;
+  display: inline-block;
+  padding: 14px 20px;
+  outline: none;
+
+  i.icon {
+    font-size: 28px;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  &:focus {
+    color: #333;
+  }
+
+  &:hover {
+    color: #777;
+  }
+
+  span.button-text {
+    display: none;
+  }
+}
+
 #palette-controls-wrapper {
   display: flex;
+  align-items: center;
+  flex-grow: 1;
 
-  .button {
-    cursor: pointer;
-    border: none;
-    font-size: 18px;
-    color: #ccc;
-    display: inline-block;
-    background: transparent;
-    padding: 14px 20px;
+  .control-button {
     margin-right: 10px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    outline: none;
 
     i.icon {
-      font-size: 28px;
-      line-height: 1;
-      display: inline-block;
-
       &.ion-ios-link {
         font-size: 22px;
-        position: relative;
-        top: 2px;
       }
-    }
-
-    &:focus {
-      color: #333;
-    }
-
-    &:hover {
-      color: #777;
     }
 
     span.button-text {
       display: none;
     }
   }
+
+  #steps-slider-wrapper {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+    label.slider-title {
+      color: #bbb;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-right: 20px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}
+
+#palette-menu-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 #main-palette-display-wrapper {
