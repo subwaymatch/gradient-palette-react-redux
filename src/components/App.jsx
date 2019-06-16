@@ -34,9 +34,6 @@ class App extends Component {
   }
 
   handleHistoryChange(location, action) {
-    // location is an object like window.loaction
-    console.log("history action=" + action);
-
     if (action === "POP") {
       const qValues = queryString.parse(location.search);
 

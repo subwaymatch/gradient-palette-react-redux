@@ -82,8 +82,6 @@ class PaletteControls extends Component {
             handleStyle={{
               borderColor: "#ccc"
             }}
-            dotStyle={{ borderColor: "orange" }}
-            activeDotStyle={{ borderColor: "yellow" }}
           />
         </div>
       </div>
